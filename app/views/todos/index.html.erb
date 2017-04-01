@@ -4,6 +4,7 @@
     name :<span><b><%= todo.name %></b></span> | description : <span><%= todo.description %></span>
     <%= link_to 'update', edit_todo_path(todo) %>
     <%= link_to 'show', todo_path(todo) %>
+    <%= link_to 'Delete', todo_path(todo), method: :delete, data: {confirm: "are U sure?"} %>
   </div>
     <br>
 

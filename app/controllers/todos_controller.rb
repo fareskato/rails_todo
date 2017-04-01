@@ -3,7 +3,7 @@ class TodosController < ApplicationController
   def index
     @todos = Todo.all
   end
-  
+
   # New submit to create
   def new
     @todo = Todo.new
@@ -36,6 +36,14 @@ class TodosController < ApplicationController
 
   def show
     @todo = Todo.find(params[:id])
+  end
+
+  def destroy
+    @todo = Todo.find(params[:id])
+    if @todo.destroy
+      flash[:notice] = 'deleted successfully'
+      redirect_to todos_path
+    end
   end
 
   private
