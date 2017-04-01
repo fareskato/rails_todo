@@ -1,5 +1,9 @@
 class TodosController < ApplicationController
 
+  def index
+    @todos = Todo.all
+  end
+  
   # New submit to create
   def new
     @todo = Todo.new

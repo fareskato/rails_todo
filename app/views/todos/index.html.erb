@@ -1,0 +1,12 @@
+<h2>All Todos</h2>
+<% @todos.each do |todo| %>
+  <div>
+    name :<span><b><%= todo.name %></b></span> | description : <span><%= todo.description %></span>
+    <%= link_to 'update', edit_todo_path(todo) %>
+    <%= link_to 'show', todo_path(todo) %>
+  </div>
+    <br>
+
+<% end %>
+
+<%= link_to 'create new todo', new_todo_path %>
